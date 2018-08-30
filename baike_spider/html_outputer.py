@@ -19,9 +19,9 @@ class HtmlOutPuter(object):
 
         for data in self.datas:
             font.write("<tr>")
-            font.write("<td>%s</td>" % data['url'].encode('utf-8'))
-            font.write("<td>%s</td>" % data['title'].encode('utf-8'))
-            font.write("<td>%s</td>" % data['summary'].encode('utf-8'))
+            font.write("<td>%s</td>" % data['url'])
+            font.write("<td>%s</td>" % data['title'])
+            font.write("<td>%s</td>" % data['summary'])
             font.write("</tr>")
 
         font.write("</table>")

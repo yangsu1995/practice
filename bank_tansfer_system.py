@@ -45,7 +45,7 @@ class TransferMoney(object):
             sql='update new_table set money=money-%s where id=%s'(money,out_count)
             cursor.execute(sql)
             rs = cursor.rowcount
-            if len(rs) != 1:
+            if rs != 1:
                 raise Exception("账户%s没有足够的钱" % out_count)
         finally:
             cursor.close()
@@ -56,7 +56,7 @@ class TransferMoney(object):
             sql = 'update new_table set money=money+%s where id=%s'(money, in_count)
             cursor.execute(sql)
             rs = cursor.rowcount
-            if len(rs) != 1:
+            if rs != 1:
                 raise Exception("账户%s没有足够的钱" % in_count)
         finally:
                 cursor.close()
